@@ -1,5 +1,6 @@
 const Search = () => (
-  <div>Search</div>
+  <div>adsfasdf
+  </div>
 );
 
 export default Search;

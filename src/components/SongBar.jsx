@@ -10,6 +10,7 @@ const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, h
       <img
         className="w-20 h-20 rounded-lg"
         // src={artistId ? song?.attributes?.artwork?.url.replace('{w}', '125').replace('{h}', '125') : song?.images?.coverart}
+        src='./komado.png'
         alt={song?.title}
       />
       <div className="flex-1 flex flex-col justify-center mx-3">

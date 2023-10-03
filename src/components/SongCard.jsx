@@ -34,6 +34,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
         <img
           alt="song_img"
           /*src={song.images?.coverart*/
+          src='./komado.png'
         />
       </div>
       <div className="mt-4 flex flex-col">

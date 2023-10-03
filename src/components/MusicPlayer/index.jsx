@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {AiOutlineClose} from 'react-icons/ai';
 
-import { nextSong, prevSong, playPause } from '../../redux/features/playerSlice';
+import { nextSong, prevSong, playPause, setActiveSong } from '../../redux/features/playerSlice';
 import Controls from './Controls';
 import Player from './Player';
 import Seekbar from './Seekbar';
@@ -52,6 +53,11 @@ const MusicPlayer = () => {
     }
   };
 
+  const onClosePlaying = () => {
+    dispatch(setActiveSong({}));
+    dispatch(playPause(false));
+  }
+
   return (
     <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
       <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong} />
@@ -89,6 +95,9 @@ const MusicPlayer = () => {
         />
       </div>
       <VolumeBar value={volume} min="0" max="1" onChange={(event) => setVolume(event.target.value)} setVolume={setVolume} />
+      <div className='absolute top-2 right-4 text-white cursor-pointer' onClick={onClosePlaying}>
+        <AiOutlineClose />
+      </div>
     </div>
   );
 };

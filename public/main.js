@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { app, BrowserWindow, ipcMain, nativeTheme, Menu, MenuItem, Notification } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeTheme, Menu, MenuItem, Notification, globalShortcut  } = require('electron');
 const path = require('path');
 
 const NOTIFICATION_TITLE = 'Basic Notification'
@@ -13,8 +13,6 @@ function showNotification () {
 let bluetoothPinCallback
 let selectBluetoothCallback
 
-
-
 const createWindow = () => {
   const window = new BrowserWindow({
     width: 800,
@@ -24,6 +22,9 @@ const createWindow = () => {
     },
   });
 
+  globalShortcut.register('CommandOrControl+Shift+I', () => {
+    window.webContents.openDevTools();
+  });
 
   window.webContents.on('select-bluetooth-device', (event, deviceList, callback) => {
     event.preventDefault()

@@ -18,6 +18,7 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
     <div className="flex-1 flex flex-row justify-between items-center">
       <img className="w-20 h-20 rounded-lg" 
         // src={song?.images?.coverart}
+        src='./komado.png'
         alt={song?.title} />
       <div className="flex-1 flex flex-col justify-center mx-3">
         <Link to={`/songs/${song.key}`}>
@@ -114,6 +115,7 @@ const TopPlay = () => {
               <Link to={`/artists/${artist?.artists[0].adamid}`}>
                 <img 
                   // src={artist?.images?.background}
+                  src='./komado.png'
                   alt="Name"
                   className="rounded-full w-full object-cover" />
               </Link>
