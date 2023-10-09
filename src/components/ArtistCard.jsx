@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 
+import avatarImg from '../assets/komado.png'
+
 const ArtistCard = ({ song, i, data }) => {
   const dispatch = useDispatch();
 
@@ -24,8 +26,8 @@ const ArtistCard = ({ song, i, data }) => {
       <div className="relative w-full h-56 group">
         <img
           alt="song_img"
-          /*src={song.images?.coverart*/
-          src='./komado.png'
+          src={song.images?.coverart}
+          // src={avatarImg}
         />
       </div>
       <div className="mt-4 flex flex-col">

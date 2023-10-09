@@ -9,6 +9,8 @@ import PlayPause from './PlayPause';
 import { playPause, setActiveSong } from '../redux/features/playerSlice';
 import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 
+import avatarImg from '../assets/komado.png'
+
 import 'swiper/css';
 import 'swiper/css/free-mode';
 
@@ -17,8 +19,8 @@ const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handle
     <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
       <img className="w-20 h-20 rounded-lg" 
-        // src={song?.images?.coverart}
-        src='./komado.png'
+        src={song?.images?.coverart}
+        // src={avatarImg}
         alt={song?.title} />
       <div className="flex-1 flex flex-col justify-center mx-3">
         <Link to={`/songs/${song.key}`}>
@@ -114,8 +116,8 @@ const TopPlay = () => {
             >
               <Link to={`/artists/${artist?.artists[0].adamid}`}>
                 <img 
-                  // src={artist?.images?.background}
-                  src='./komado.png'
+                  src={artist?.images?.background}
+                  // src={avatarImg}
                   alt="Name"
                   className="rounded-full w-full object-cover" />
               </Link>
